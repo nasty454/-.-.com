@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сувенир из Сириуса - Подставка от Лукойл</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #e10a1a 0%, #9c0a15 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .sirius-logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        .lukoil-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #0066cc;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .hero {
+            padding: 50px 0;
+            text-align: center;
+            background-color: white;
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            margin: 0 auto 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #e10a1a;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+            .btn:hover {
+                background-color: #c50916;
+            }
+
+        .about {
+            padding: 60px 0;
+            background-color: #f2f2f2;
+        }
+
+        .section-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0066cc;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+            .about-text p {
+                margin-bottom: 20px;
+                font-size: 18px;
+            }
+
+        .features {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+            .feature i {
+                font-size: 40px;
+                color: #0066cc;
+                margin-bottom: 20px;
+            }
+
+            .feature h3 {
+                margin-bottom: 15px;
+                color: #0066cc;
+            }
+
+        .gallery {
+            padding: 60px 0;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #e6e6e6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        .instructions {
+            padding: 40px 0;
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+        }
+
+            .instructions h2 {
+                margin-bottom: 20px;
+            }
+
+            .instructions ol {
+                text-align: left;
+                max-width: 600px;
+                margin: 0 auto;
+                padding-left: 20px;
+            }
+
+            .instructions li {
+                margin-bottom: 10px;
+                font-size: 18px;
+            }
+
+        .order {
+            padding: 60px 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .order-form {
+            max-width: 500px;
+            margin: 40px auto 0;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: bold;
+                color: #0066cc;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+        footer {
+            padding: 30px 0;
+            background-color: #1a2e47;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .product-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="sirius-logo">СИРИУС</div>
+                <div class="lukoil-logo">ЛУКОЙЛ</div>
+            </div>
+            <h1>Эксклюзивная подставка из лагеря "Сириус"</h1>
+            <p class="subtitle">Памятный сувенир для ценителей качества</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="product-image" style="background: url('https://i.yapx.ru/aZLoQ.png') center/cover no-repeat; ">
+            </div>
+            <p>Уникальная подставка, созданная в образовательном центре "Сириус" при поддержке компании Лукойл</p>
+            <a href="#order" class="btn">Заказать сейчас</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">О подставке</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Эта эксклюзивная подставка была создана в рамках образовательной программы в легендарном лагере "Сириус" при поддержке компании Лукойл.</p>
+                    <p>Каждый экземпляр изготовлен с вниманием к деталям и представляет собой не только практичный аксессуар, но и ценный коллекционный предмет.</p>
+                    <p>Подставка выполнена из высококачественных материалов и символизирует единство образования, инноваций и традиций качества Лукойл.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Особенности</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i>✓</i>
+                    <h3>Высокое качество</h3>
+                    <p>Изготовлена из прочных материалов с соблюдением строгих стандартов</p>
+                </div>
+                <div class="feature">
+                    <i>✓</i>
+                    <h3>Эксклюзивность</h3>
+                    <p>Ограниченный тираж, каждый экземпляр по-своему уникален</p>
+                </div>
+                <div class="feature">
+                    <i>✓</i>
+                    <h3>Практичность</h3>
+                    <p>Идеально подходит для телефонов, планшетов или украшения интерьера</p>
+                </div>
+                <div class="feature">
+                    <i>✓</i>
+                    <h3>Памятная ценность</h3>
+                    <p>Сувенир, символизирующий инновации и образование</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Галерея</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background: url('https://i.yapx.ru/aZLon.png') center/cover no-repeat;">
+                </div>
+                <div class="gallery-item" style="background: url('https://i.yapx.ru/aZLqE.png') center/cover no-repeat;">
+                </div>
+                <div class="gallery-item" style="background: url('https://i.yapx.ru/aZLqO.png') center/cover no-repeat;">
+                </div>
+                <div class="gallery-item" style="background: url('https://i.yapx.ru/aZLr5.png') center/cover no-repeat; ">
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="order">
+        <div class="container">
+            <h2 class="section-title">Заказать подставку</h2>
+            <p>Оставьте свои данные, и наш менеджер свяжется с вами для оформления заказа</p>
+
+            <form class="order-form">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" placeholder="+7 (999) 999-99-99" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Количество</label>
+                    <input type="number" id="quantity" min="1" value="1" required>
+                </div>
+                <button type="submit" class="btn">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Подставка из лагеря "Сириус" при поддержке Лукойл</p>
+            <p>Официальный сувенирный продукт</p>
+        </div>
+    </footer>
+</body>
+</html>
